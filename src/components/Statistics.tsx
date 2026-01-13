@@ -14,7 +14,8 @@ import {
 } from 'chart.js';
 import { Target, TrendingUp, Calendar, Clock } from 'lucide-react';
 import { userService } from '../services/userService';
-import type { UserStatistics, PredictionTrends, EmotionDistribution, EngagementMetrics } from '../types';
+import type { UserStatistics } from '../types';
+import type { PredictionTrends, EmotionDistribution } from '../types/visualization';
 
 ChartJS.register(
   CategoryScale,
@@ -32,7 +33,7 @@ const Statistics: React.FC = () => {
   const [stats, setStats] = useState<UserStatistics | null>(null);
   const [predictionTrends, setPredictionTrends] = useState<PredictionTrends | null>(null);
   const [emotionDistribution, setEmotionDistribution] = useState<EmotionDistribution | null>(null);
-  const [engagementMetrics, setEngagementMetrics] = useState<EngagementMetrics | null>(null);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -43,16 +44,14 @@ const Statistics: React.FC = () => {
   const loadAllData = async () => {
     try {
       setLoading(true);
-      const [statistics, trends, distribution, engagement] = await Promise.all([
+      const [statistics, trends, distribution] = await Promise.all([
         userService.getUserStatistics(),
         userService.getUserPredictionTrends(),
-        userService.getUserEmotionDistribution(),
-        userService.getUserEngagementMetrics()
+        userService.getUserEmotionDistribution()
       ]);
       setStats(statistics);
       setPredictionTrends(trends);
       setEmotionDistribution(distribution);
-      setEngagementMetrics(engagement);
     } catch (err) {
       setError('Failed to load statistics');
       console.error('Error loading statistics:', err);

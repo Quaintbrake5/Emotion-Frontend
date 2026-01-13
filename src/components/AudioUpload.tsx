@@ -105,7 +105,10 @@ const AudioUpload: React.FC<AudioUploadProps> = ({ onPredictionComplete }) => {
       setRecordingDuration(0);
 
       // Set up Web Audio API for real-time visualization
-      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      const AudioContextClass = window.AudioContext || (window as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      if (!AudioContextClass) {
+        throw new Error('AudioContext not supported');
+      }
       const audioContext = new AudioContextClass();
       audioContextRef.current = audioContext;
 

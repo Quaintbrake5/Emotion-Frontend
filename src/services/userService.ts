@@ -1,5 +1,6 @@
 import axios from 'axios';
-import type { Prediction, AudioFile, UserStatistics, UserActivity, PredictionAnalytics, AdminUser, PredictionTrends, EmotionDistribution, EngagementMetrics } from '../types';
+import type { Prediction, AudioFile, UserStatistics, UserActivity, PredictionAnalytics, AdminUser } from '../types';
+import type { PredictionTrends, EmotionDistribution, EngagementMetrics } from '../types/visualization';
 
 const API_BASE_URL = 'http://localhost:8001'; // Adjust this to match your backend URL
 

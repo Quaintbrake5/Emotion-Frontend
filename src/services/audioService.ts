@@ -73,8 +73,8 @@ export const audioService = {
         },
       });
       return response.data;
-    } catch (error: any) {
-      console.error('Audio prediction failed:', error.response?.data || error.message);
+    } catch (error: unknown) {
+      console.error('Audio prediction failed:', error instanceof Error ? error.message : error);
       throw error;
     }
   },
