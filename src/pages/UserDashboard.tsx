@@ -11,7 +11,7 @@ import '../styles/dashboard.css';
 type TabType = 'overview' | 'upload' | 'history' | 'statistics' | 'profile';
 
 const UserDashboard: React.FC = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, signOut } = useAuth();
   const [activeTab, setActiveTab] = useState<TabType>('overview');
   const [currentPrediction, setCurrentPrediction] = useState<Prediction | null>(null);
   const [stats] = useState({
@@ -245,6 +245,10 @@ const UserDashboard: React.FC = () => {
               </div>
               <div className="profile-actions">
                 <button className="btn btn-secondary" onClick={logout}>
+                  <LogOut size={16} />
+                  Log Out
+                </button>
+                <button className="btn btn-danger" onClick={signOut}>
                   <LogOut size={16} />
                   Sign Out
                 </button>

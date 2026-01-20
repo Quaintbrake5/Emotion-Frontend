@@ -22,6 +22,10 @@ export const authService = {
     return response.data;
   },
 
+  async logout(): Promise<void> {
+    await authAPI.logout();
+  },
+
   async deleteUser(): Promise<void> {
     await authAPI.deleteCurrentUser();
   },

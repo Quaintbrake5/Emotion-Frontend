@@ -172,6 +172,7 @@ export const ENDPOINTS = {
   // Authentication endpoints
   REGISTER: '/auth/register',
   LOGIN: '/auth/token',
+  LOGOUT: '/auth/logout',
   USERS_ME: '/auth/users/me',
   PASSWORD_RESET_REQUEST: '/auth/password-reset/request',
   PASSWORD_RESET_CONFIRM: '/auth/password-reset/confirm',
@@ -370,6 +371,7 @@ export const authAPI = {
     api.post(ENDPOINTS.LOGIN, new URLSearchParams({ username, password }), {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }),
+  logout: () => api.post(ENDPOINTS.LOGOUT),
   getCurrentUser: () => api.get(ENDPOINTS.USERS_ME),
   updateCurrentUser: (userData: UserUpdate) => api.put(ENDPOINTS.USERS_ME, userData),
   deleteCurrentUser: () => api.delete(ENDPOINTS.USERS_ME),

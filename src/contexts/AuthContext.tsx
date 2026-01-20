@@ -97,11 +97,28 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     toast.success('Logged out successfully!');
   };
 
+  const signOut = async () => {
+    try {
+      setIsLoading(true);
+      await authService.deleteUser();
+      localStorage.removeItem('access_token');
+      setUser(null);
+      toast.success('Account deleted successfully!');
+    } catch (error) {
+      console.error('Sign out error:', error);
+      toast.error('Failed to delete account. Please try again.');
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const value: AuthContextType = {
     user,
     login,
     register,
     logout,
+    signOut,
     isLoading,
     isAuthenticated: !!user
   };
