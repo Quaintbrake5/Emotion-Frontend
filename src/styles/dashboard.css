@@ -115,7 +115,7 @@
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   position: fixed;
-  top: 5rem;
+  top: 9rem;
   left: 0;
   right: 0;
   z-index: 51;
@@ -171,7 +171,7 @@
 .dashboard-main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 9rem 2rem 2rem;
+  padding: 10rem 2rem 2rem;
   background: var(--bg-primary);
   min-height: calc(100vh - 140px);
 }
@@ -1254,6 +1254,7 @@
   align-items: flex-end;
   gap: 0.25rem;
 }
+
 
 .emotion-count {
   font-weight: 600;
