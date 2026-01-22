@@ -171,7 +171,7 @@
 .dashboard-main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6rem 2rem 2rem;
+  padding: 9rem 2rem 2rem;
   background: var(--bg-primary);
   min-height: calc(100vh - 140px);
 }
