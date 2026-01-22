@@ -161,7 +161,11 @@ export interface OTPBackupCodeRequest {
   backup_code: string;
 }
 
-const API_BASE_URL = 'https://emotion-backend-hxur.onrender.com/'; // Adjust this to match your backend URL
+const API_BASE_PUBLIC_URL = 'https://emotion-backend-hxur.onrender.com/'; // Adjust this to match your backend URL
+const API_BASE_LOCAL_URL = 'http://localhost:8001'; // Local development URL
+
+// Automatically switch between local and public URLs based on environment
+const API_BASE_URL = import.meta.env.DEV ? API_BASE_LOCAL_URL : API_BASE_PUBLIC_URL;
 
 // API Endpoints
 export const ENDPOINTS = {
@@ -288,7 +292,7 @@ api.interceptors.request.use(
 
 // Separate axios instance for token refresh to avoid interceptor loops
 const refreshApi = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_BASE_PUBLIC_URL,
   headers: {
     'Content-Type': 'application/json',
   },

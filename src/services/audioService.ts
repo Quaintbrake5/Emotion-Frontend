@@ -1,8 +1,11 @@
 import axios from 'axios';
 import type { Prediction, VoiceRecordingRequest, VoiceRecordingResponse } from '../types';
 
-const API_BASE_URL = 'https://emotion-backend-hxur.onrender.com/'; // Adjust this to match your backend URL
-// previously localhost:8001
+const API_BASE_PUBLIC_URL = 'https://emotion-backend-hxur.onrender.com/'; // Adjust this to match your backend URL
+const API_BASE_LOCAL_URL = 'http://localhost:8001'; // Local development URL
+
+// Automatically switch between local and public URLs based on environment
+const API_BASE_URL = import.meta.env.DEV ? API_BASE_LOCAL_URL : API_BASE_PUBLIC_URL;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
