@@ -333,7 +333,7 @@ api.interceptors.response.use(
 
       if (isAllowAnyEndpoint) {
         // For AllowAny endpoints, just reject the error without retrying
-        return Promise.reject(error);
+        throw(error);
       }
 
       ((originalRequest as { _retry?: boolean })._retry = true);
@@ -342,8 +342,8 @@ api.interceptors.response.use(
         const refreshToken = localStorage.getItem('refresh_token');
         if (!refreshToken) {
           // No refresh token, redirect to login
-          window.location.href = '/login';
-          return Promise.reject(error);
+          globalThis.location.href = '/login';
+          throw(error);
         }
 
         const response = await refreshApi.post(ENDPOINTS.TOKEN_REFRESH, {
@@ -359,12 +359,12 @@ api.interceptors.response.use(
         // Refresh failed, redirect to login
         localStorage.removeItem('access_token');
         localStorage.removeItem('refresh_token');
-        window.location.href = '/login';
-        return Promise.reject(refreshError);
+        globalThis.location.href = '/login';
+        throw(refreshError);
       }
     }
 
-    return Promise.reject(error);
+    throw(error);
   }
 );
 

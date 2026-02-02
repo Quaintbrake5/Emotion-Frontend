@@ -13,8 +13,8 @@
   --bg-tertiary: #f1f5f9;
 
   --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
 
   --border-color: #e2e8f0;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -64,7 +64,6 @@
   gap: 0.75rem;
   font-size: 1.5rem;
   font-weight: 700;
-  /* color: var(--text-primary); */
 }
 
 .logo-icon {
@@ -91,7 +90,6 @@
 
 .user-name {
   font-weight: 500;
-  /* color: var(--text-primary); */
 }
 
 .btn-ghost {
@@ -451,7 +449,7 @@
 }
 
 .action-icon-primary {
-  color: white;
+  color: var(--text-primary);
   font-size: 3rem;
   flex-shrink: 0;
 }
@@ -1050,7 +1048,6 @@
 
 .emotion-name {
   font-weight: 600;
-  /* color: var(--text-primary); */
 }
 
 .emotion-percentage {
@@ -1243,11 +1240,6 @@
   border-radius: 50%;
 }
 
-.emotion-name {
-  font-weight: 500;
-  /* color: var(--text-primary); */
-}
-
 .emotion-stats {
   display: flex;
   flex-direction: column;
@@ -1259,11 +1251,6 @@
 .emotion-count {
   font-weight: 600;
   color: var(--text-primary);
-}
-
-.emotion-percentage {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
 }
 
 .insights-section {
@@ -1538,10 +1525,6 @@
   animation: fadeIn 0.6s ease-out;
 }
 
-.nav-tab {
-  animation: fadeIn 0.4s ease-out;
-}
-
 .nav-tab:nth-child(1) { animation-delay: 0.1s; }
 .nav-tab:nth-child(2) { animation-delay: 0.2s; }
 .nav-tab:nth-child(3) { animation-delay: 0.3s; }
@@ -1616,7 +1599,6 @@
 .hero-title-clean {
   font-size: 3rem;
   font-weight: 900;
-  /* color: var(--text-primary); */
   margin-bottom: 1.5rem;
   line-height: 1.1;
 }
@@ -1664,8 +1646,7 @@
 
 .btn-hero-secondary {
   background: transparent;
-  /* color: var(--text-primary); */
-  color: white;
+  color: var(--text-primary);
   padding: 1rem 2rem;
   border-radius: var(--border-radius-xl);
   font-size: 1.1rem;
@@ -1792,39 +1773,14 @@
   text-align: center;
 }
 
-.stat-value {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.5rem;
-}
-
-.stat-trend {
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--border-radius-xl);
-  display: inline-block;
-}
-
 .stat-trend.positive {
   background: rgba(34, 197, 94, 0.1);
-  color: #16a34a;
+  color: #042f1e;
 }
 
 .stat-trend.neutral {
   background: rgba(156, 163, 175, 0.1);
-  color: #6b7280;
+  color: #1e293b;
 }
 
 /* Quick Actions Section */
@@ -1886,7 +1842,7 @@
 .action-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -1894,16 +1850,6 @@
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   line-height: 1.5;
-}
-
-.action-arrow {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  font-weight: bold;
-  transition: var(--transition-fast);
 }
 
 .action-card-clean:hover .action-arrow {
@@ -2010,7 +1956,6 @@
 
   .stat-value {
     font-size: 2rem;
-    /* color: white; */
   }
 
   .action-card-clean {
@@ -2044,10 +1989,6 @@
 .action-card-clean,
 .activity-card-clean {
   animation: fadeIn 0.8s ease-out;
-}
-
-.hero-section-clean {
-  animation-delay: 0.1s;
 }
 
 .stat-card-clean:nth-child(1) { animation-delay: 0.2s; }
@@ -2143,7 +2084,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  color: white;
+  color: var(--text-primary);
 }
 
 /* Audio Files List */
@@ -2237,7 +2178,7 @@
 .audio-file-icon {
   font-size: 2.5rem;
   color: #00f2fe;
-  background: rgba(0, 242, 254, 0.1);
+  background: #003366;
   padding: 1rem;
   border-radius: var(--border-radius-lg);
 }
@@ -2365,7 +2306,7 @@
 }
 
 .history-error button {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  background: #000000;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -2507,10 +2448,6 @@
 .history-error,
 .history .prediction-display {
   animation: fadeIn 0.6s ease-out;
-}
-
-.history-tab {
-  animation: fadeIn 0.4s ease-out;
 }
 
 .history-tab:nth-child(1) { animation-delay: 0.1s; }
