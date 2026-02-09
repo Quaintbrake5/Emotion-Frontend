@@ -1646,7 +1646,7 @@
 
 .btn-hero-secondary {
   background: transparent;
-  color: var(--text-primary);
+  color: white;
   padding: 1rem 2rem;
   border-radius: var(--border-radius-xl);
   font-size: 1.1rem;
