@@ -2,11 +2,14 @@ import axios from 'axios';
 import type { Prediction, AudioFile, UserStatistics, UserActivity, PredictionAnalytics, AdminUser } from '../types';
 import type { PredictionTrends, EmotionDistribution, EngagementMetrics } from '../types/visualization';
 
-const API_BASE_URL = 'https://emotion-backend-hxur.onrender.com/'; // Adjust this to match your backend URL, 
-// previously localhost:8001
+const API_BASE_URL = 'https://emotion-backend-hxur.onrender.com/'; // Production backend URL
+const API_BASE_URL_LOCAL = 'http://localhost:8001/'; // Local development backend URL
+
+// Use local for development, production for deployment
+const API_BASE_URL_CURRENT = import.meta.env.DEV ? API_BASE_URL_LOCAL : API_BASE_URL;
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_BASE_URL_CURRENT,
 });
 
 // Add token to requests if available
